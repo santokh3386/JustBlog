@@ -1,0 +1,20 @@
+﻿@using (Html.BeginForm(
+    "Search",           // action
+    "Blog",             // controller
+    FormMethod.Get,     // method
+    new { id = "search-form" })) // html attributes
+{
+    
+    @*<div class="hero-unit">*@
+        <div class="preview">Search Posts</div>
+        
+        <div class="view">
+            <form class="form-search form-inline">
+            @*<input type="text" class="input-medium search-query">*@
+            @Html.TextBox("s")
+            <button type="submit" class="btn btn-primary" contenteditable="false">
+                Search</button>
+            </form>
+        </div>
+    @*</div>*@
+}

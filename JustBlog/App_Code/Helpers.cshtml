@@ -1,0 +1,11 @@
+﻿@using System.Web.Mvc.Html
+@using JustBlog
+@using JustBlog.Core.Objects
+
+@helper Tags(System.Web.Mvc.HtmlHelper htmlHelper, IList<Tag> tags)
+{
+  foreach (var tag in tags)
+  {
+    @JustBlog.ActionLinkExtensions.TagLink(htmlHelper, tag)<q> , </q>
+  }
+}

@@ -1,0 +1,66 @@
+﻿@model JustBlog.Core.Objects.Post
+@using System.Web.Mvc.Html
+@using JustBlog
+@{
+    ViewBag.Title = "Post";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="content">
+    <h1>@ViewBag.Title</h1>
+    <div class="row-fluid clearfix">
+        <div class="span9 column ui-sortable">
+            <table class="table table-bordered table-hover" contenteditable="false">
+                <thead>
+                    <tr class="warning">
+                        <th>
+                            <h2>
+                                @Html.PostLink(Model)</h2>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="info">
+                        <td>
+                            <span>Category: </span>@Html.CategoryLink(Model.Category)
+                        </td>
+                    </tr>
+                    <tr class="error">
+                        <td>
+                            <span>Tags:</span>@Helpers.Tags(Html, Model.Tags)
+                        </td>
+                    </tr>
+                    <tr class="success">
+                        <td>
+                            <span>Post Date: </span>@Model.PostedOn.ToConfigLocalTime()
+                        </td>
+                    </tr>
+                    <tr class="danger">
+                        <td>@Html.Raw(@Model.Description)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="span3 column ui-sortable">
+            <div class="container-fluid">
+                @Html.Partial("_Search")
+                @Html.Action("Sidebars")
+            </div>
+            @*
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="well sidebar-nav">
+                        <br />
+                        <br />
+                        <br />
+                        
+                    </div>
+                    <!--/.well -->
+                </div>
+                <!--/span-->
+            </div>
+            </div>
+*@
+        </div>
+    </div>
