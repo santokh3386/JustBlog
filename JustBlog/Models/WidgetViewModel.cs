@@ -13,9 +13,11 @@ namespace JustBlog.Models
         {
             Categories = blogRepository.Categories();
             Tags = blogRepository.Tags();
+            LatestPosts = blogRepository.Posts(1, 1);
         }
 
         public IList<Category> Categories { get; internal set; }
         public IList<Tag> Tags { get; set; }
+        public IList<Post> LatestPosts { get; set; }
     }
 }

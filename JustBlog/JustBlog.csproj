@@ -188,7 +188,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="CustomDateTimeConverter.cs" />
@@ -362,9 +361,7 @@
     <Content Include="Views\Shared\_Sidebars.cshtml" />
     <Content Include="Views\Shared\_Categories.cshtml" />
     <Content Include="Views\Shared\_Tags.cshtml" />
-    <Content Include="Views\Blog\Contact.cshtml" />
-    <Content Include="Views\Blog\About.cshtml" />
-    <Content Include="Views\Blog\Posts.cshtml" />
+    <Content Include="Views\Shared\_LatestPosts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JustBlog.Core\JustBlog.Core.csproj">
